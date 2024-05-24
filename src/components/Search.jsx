@@ -6,10 +6,10 @@ export default function Search() {
   const { input, setInput } = useContext(BookContext);
 
   return (
-    <Box h={"20vh"}>
-      <Center margin={"100px"} display={"flex"} gap={1}>
+    <Box h={"10vh"} m={"100px"}>
+      <Center width={"100%"}>
         <Input
-          w={"500px"}
+          maxWidth={"500px"}
           border={"1px solid #3c8df3"}
           value={input}
           onChange={(e) => {

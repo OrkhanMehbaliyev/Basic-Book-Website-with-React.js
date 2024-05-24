@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 import BookContext from "../utils/context";
 import { useContext, useEffect, useState } from "react";
-import { Box, Heading, Image, Text, Flex } from "@chakra-ui/react";
+import { Box, Heading, Image, Text, Flex, Spinner } from "@chakra-ui/react";
 import useBookDetails from "../hooks/useBookDetail";
 
 export default function BookDetails() {
   const { id } = useParams();
-  const [book, setBook] = useState({});
-  const { foundBook } = useBookDetails(id);
+  const [book, setBook] = useState(null);
+  const { foundBook, error, loading } = useBookDetails(id);
 
   useEffect(() => {
     setBook(foundBook);
@@ -23,7 +23,7 @@ export default function BookDetails() {
       h={"100%"}
       w={"100%"}
     >
-      {book ? (
+      {book && (
         <>
           <Box>
             <Image src={book?.thumbnail} width={"150px"} height={"200px"} />
@@ -44,9 +44,19 @@ export default function BookDetails() {
             <Heading>{book?.price}</Heading>
           </Box>
         </>
-      ) : (
-        <Box>Could not find</Box>
       )}
+      {loading && (
+        <Flex alignItems={"center"} justifyContent={"center"} h="100%">
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="blue.500"
+            size="xl"
+          />
+        </Flex>
+      )}
+      {error && <Box>Could not find</Box>}
     </Flex>
   );
 }

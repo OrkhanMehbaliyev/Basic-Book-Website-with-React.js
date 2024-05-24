@@ -18,7 +18,7 @@ export default function BookItem({ book }) {
 
   return (
     <Card
-      maxW="sm"
+      maxW="md"
       _hover={{ transform: "scale(1.1)", boxShadow: "lg", transition: "0.2s" }}
       onClick={handleCardClick}
     >

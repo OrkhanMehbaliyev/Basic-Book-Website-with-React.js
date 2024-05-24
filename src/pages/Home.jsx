@@ -12,7 +12,7 @@ export default function Home() {
       alignItems={"center"}
       justifyContent={"center"}
     >
-      <Heading color={"blue.700"} fontSize={"50px"}>
+      <Heading color={"blue.700"} fontSize={"50px"} textAlign={"center"}>
         Welcome to BookStore
       </Heading>
       <NavLink to={"/books"}>

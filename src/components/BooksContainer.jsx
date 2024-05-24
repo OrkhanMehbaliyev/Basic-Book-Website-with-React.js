@@ -14,8 +14,9 @@ export default function BooksContainer() {
   const { searchedBooks, loading, notFound } = useBookSearch(
     input,
     startIndex,
-    20
+    24
   );
+
   //Trottling for infinite scroll
   const throttledFetchData = useCallback(throttle(setStartIndex, 1500), []);
 
@@ -30,14 +31,17 @@ export default function BooksContainer() {
 
   useEffect(() => {
     const container = divRef.current;
-
     if (container) container.addEventListener("scroll", handleScroll);
   }, [startIndex]);
 
   function handleScroll() {
     const container = divRef.current;
-    if (window.innerHeight + container.scrollTop >= container.scrollHeight) {
-      throttledFetchData((prev) => prev + 20);
+
+    if (
+      window.innerHeight + container.scrollTop + 1 >=
+      container.scrollHeight
+    ) {
+      throttledFetchData((prev) => prev + 24);
     }
   }
 
@@ -52,7 +56,14 @@ export default function BooksContainer() {
 
   return (
     <BookContext.Provider value={data}>
-      <Box ref={divRef} h={"100%"} overflowY={"auto"}>
+      <Box
+        ref={divRef}
+        h={"100%"}
+        width={"100%"}
+        overflowY={"auto"}
+        display={"flex"}
+        flexDirection={"column"}
+      >
         <Search />
         <BookGrid />
       </Box>

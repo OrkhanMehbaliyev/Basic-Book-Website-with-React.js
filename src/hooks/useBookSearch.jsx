@@ -12,7 +12,6 @@ export default function useBookSearch(searchStr, startIndex, numResults) {
 
   useEffect(() => {
     setNotFound(false);
-    setLoading(false);
     setLoading(true);
 
     //Debouncing

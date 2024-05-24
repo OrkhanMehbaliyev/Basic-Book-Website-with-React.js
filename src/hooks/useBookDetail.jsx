@@ -6,16 +6,15 @@ const searchUrl = (id) => `https://www.googleapis.com/books/v1/volumes/${id}`;
 export default function useBookDetails(id) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [foundBook, setFoundBook] = useState({});
+  const [foundBook, setFoundBook] = useState(null);
 
   useEffect(() => {
+    setLoading(true);
+    setError(false);
     fetchBook(id);
   }, [id]);
 
   function fetchBook(id) {
-    setLoading(true);
-    setError(false);
-
     axios({
       method: "GET",
       url: searchUrl(id),
@@ -31,10 +30,9 @@ export default function useBookDetails(id) {
         setFoundBook(item);
       })
       .catch((err) => {
-        setError(err);
-        console.log(err);
+        setError(true);
       })
-      .finally(setLoading(false));
+      .finally(() => setLoading(false));
   }
 
   return { loading, foundBook, error };
