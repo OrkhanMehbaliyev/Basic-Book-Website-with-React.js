@@ -1,6 +1,7 @@
 import { Box, Center, HStack, Heading, Image } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import BookIcon from "../../assets/icons/bookIcon.svg";
+import CartDrawer from "../CartDrawer";
 
 export default function Header() {
   return (
@@ -27,6 +28,9 @@ export default function Header() {
           <NavLink to={"/contact"}>Contact</NavLink>
         </HStack>
       </Center>
+      <Box me={3}>
+        <CartDrawer />
+      </Box>
     </Box>
   );
 }

@@ -7,13 +7,13 @@ import {
   VStack,
   useDisclosure,
   Image,
-  Stack,
   HStack,
   Heading,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import BookIcon from "../../assets/icons/bookIcon.svg";
 import { NavLink } from "react-router-dom";
+import CartDrawer from "../CartDrawer";
 
 const MobileNavbar = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -62,6 +62,9 @@ const MobileNavbar = () => {
             </Box>
             <Box onClick={onToggle}>
               <NavLink to={"/contact"}>Contact</NavLink>
+            </Box>
+            <Box onClick={onToggle}>
+              <CartDrawer />
             </Box>
           </VStack>
         </Box>

@@ -4,7 +4,7 @@ import BookContext from "../utils/context";
 import { useCallback, useEffect, useRef, useState } from "react";
 import BookGrid from "./BookGrid";
 import useBookSearch from "../hooks/useBookSearch";
-import { throttle } from "../utils/helpers";
+import { throttle } from "../utils/helperFunctions";
 
 export default function BooksContainer() {
   const [displayedBooks, setDisplayedBooks] = useState([]);

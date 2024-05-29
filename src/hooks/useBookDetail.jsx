@@ -31,6 +31,7 @@ export default function useBookDetails(id) {
       })
       .catch((err) => {
         setError(true);
+        console.log(err);
       })
       .finally(() => setLoading(false));
   }

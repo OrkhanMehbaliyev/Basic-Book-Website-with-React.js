@@ -1,6 +1,6 @@
 import { Box, Center, Input } from "@chakra-ui/react";
 import BookContext from "../utils/context";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 export default function Search() {
   const { input, setInput } = useContext(BookContext);

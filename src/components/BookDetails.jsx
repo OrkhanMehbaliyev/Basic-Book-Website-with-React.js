@@ -1,6 +1,4 @@
 import { useParams } from "react-router-dom";
-import BookContext from "../utils/context";
-import { useContext, useEffect, useState } from "react";
 import { Box, Heading, Image, Text, Flex, Spinner } from "@chakra-ui/react";
 import useBookDetails from "../hooks/useBookDetail";
 

@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react";
-import { useEffect, useRef } from "react";
 import { Outlet } from "react-router-dom";
 
 export default function Books() {

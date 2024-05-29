@@ -1,6 +1,8 @@
 import { Box, Center, HStack, Heading, Image, Stack } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import BookIcon from "../../assets/icons/bookIcon.svg";
+import React from "react";
+import CartDrawer from "../CartDrawer";
 
 export default function SideBar() {
   return (
@@ -22,6 +24,9 @@ export default function SideBar() {
           <NavLink to={"/authors"}>Authors</NavLink>
           <NavLink to={"/contact"}>Contact</NavLink>
         </Stack>
+        <Box position={"absolute"} bottom={10}>
+          <CartDrawer />
+        </Box>
       </Center>
     </Box>
   );
