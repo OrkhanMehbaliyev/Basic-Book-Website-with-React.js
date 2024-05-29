@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Box, Heading, Image, Text, Flex, Spinner } from "@chakra-ui/react";
 import useBookDetails from "../hooks/useBookDetail";
+import { useState } from "react";
 
 export default function BookDetails() {
   const { id } = useParams();
