@@ -28,10 +28,10 @@ export default function BookDetails() {
             <Image src={book?.thumbnail} width={"150px"} height={"200px"} />
           </Box>
           <Box textAlign={"center"}>
-            <Heading size={"xl"} mb={4}>
+            <Heading size="xl" mb={4}>
               {book?.title}
             </Heading>
-            <Heading size={"md"}>{book?.authors}</Heading>
+            <Heading size="md">{book?.authors}</Heading>
           </Box>
           <Box width="90%" textAlign={"center"}>
             <Text
